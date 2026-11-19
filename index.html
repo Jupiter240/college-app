@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ayan — College &amp; Internship Tracker</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- MINIMAL TOP BAR (LINEAR / NOTION STYLE) -->
+  <header class="topbar">
+    <div class="topbar-left">
+      <span class="workspace-name" id="brand-home">Ayan</span>
+      <span class="breadcrumb-sep">/</span>
+      <span class="current-tab-label" id="current-tab-label">Overview</span>
+    </div>
+
+    <div class="topbar-right">
+      <span class="save-indicator" id="save-status-text">Saved</span>
+
+      <input
+        type="text"
+        id="global-search-input"
+        class="search-input"
+        placeholder="Search... (/)"
+      />
+
+      <!-- 3-LINE HOVER MENU ON THE RIGHT -->
+      <div class="right-nav-zone" id="right-nav-zone">
+        <button type="button" class="hamburger-trigger" id="hamburger-trigger" aria-label="Navigation Menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+
+        <!-- HOVER-ACTIVATED RIGHT SIDE PANEL -->
+        <aside class="right-side-panel" id="sidebar-nav"></aside>
+      </div>
+    </div>
+  </header>
+
+  <!-- CENTERED, BREATHABLE WORKSPACE -->
+  <main class="workspace" id="main-content"></main>
+
+  <!-- SLIDE-OVER INSPECTOR / EDITOR DRAWER (PROGRESSIVE DISCLOSURE) -->
+  <div class="drawer-backdrop" id="modal-backdrop">
+    <div class="drawer-panel">
+      <div class="drawer-header">
+        <h3 id="modal-title">Details</h3>
+        <button type="button" class="btn-text" id="modal-close-btn">Close</button>
+      </div>
+      <form id="modal-form" class="drawer-form">
+        <div class="drawer-body" id="modal-body"></div>
+        <div class="drawer-footer">
+          <button type="button" class="btn btn-danger" id="modal-delete-btn" style="display:none;margin-right:auto;">Delete</button>
+          <button type="button" class="btn" id="modal-cancel-btn">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="modal-save-btn">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <input type="file" id="file-import-input" accept=".json" style="display:none;" />
+  <div class="toast-container" id="toast-container"></div>
+
+  <script src="data/default_data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
